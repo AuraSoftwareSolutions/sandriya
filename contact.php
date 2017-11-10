@@ -4,10 +4,10 @@
  */
 
 // an email address that will be in the From field of the email.
-$from = 'Utopia@domain.com';
+$from = 'contact@utopiatoursandadvice.com';
 
 // an email address that will receive the email with the output of the form
-$sendTo = 'projecttiltofficial@gmail.com';
+$sendTo = 'uttopianavas@gmail.com';
 
 // subject of the email
 $subject = 'New message from contact form';
@@ -53,7 +53,7 @@ try
     // Send email
     $retval = mail($sendTo, $subject, $emailText, implode("\n", $headers));
 
-    if(isset($retval))//change
+    if(isset($retval))
     {
         $responseArray = array('type' => 'success', 'message' => $okMessage);
     }

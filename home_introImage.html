@@ -1,0 +1,116 @@
+        <!-- *** INTRO IMAGE ***
+    _________________________________________________________ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js" integrity="sha256-2/3+Q1kMYR8MDaqFPNBgmLgiqWJjySkg1wqLx/iE5Zo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.enquiryform {
+    z-index: +1;
+    background-color: #d9d9d952;
+    border-radius: 5px;
+}
+div .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 12px;
+}
+</style>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+            $(function () {
+                $('.datetimepicker1').datetimepicker({
+                    format: 'DD-MM-YYYY'
+                });
+            });
+        </script>
+	<div id="intro" class="clearfix">
+		<header id="header" class="header header_3 animation-bg animation-bg-cloud">
+			<div class="header-bg" data-vide-bg="assets/video/smoke">
+				<div class="item">
+					<div class="container">
+						<div class="row">
+							<div class="carousel-caption">
+								<div data-animate="fadeInDown" class="logo">
+									<!-- <img src="img/logo-big.png" alt="logo" width="150"> -->
+								</div>
+								<h1 data-animate="fadeInDown">EXPLORE GODS OWN COUNTRY</h1>
+                                <h2 data-animate="slideInUp">Guide to plan your trip on Kerala</h2>
+                                
+                            </div>
+                             <div class="row">
+                            <form>
+               
+                    <div class="col-md-12 enquiryform card carousel-caption">
+                        <div class="col-md-3 form-group">
+                            <input id="name" name="name" type="text" placeholder="Name" class="form-control" required="">
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <select id="nationality" name="nationality" class="form-control">
+                                <option value="1">Nationality</option>
+                                <option value="2">Indian</option>
+                                <option value="3">KSA</option>
+                                <option value="4">Emarati</option>
+                                <option value="5">Pakistani</option>
+                                <option value="6">Bengali</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <input id="mobile" name="mobile" type="text" placeholder="Mobile" class="form-control" required="">
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <input id="mail" name="mail" type="text" placeholder="E Mail" class="form-control " required="">
+                        </div>
+                        <div class="col-md-2 form-group">
+                            <div class='input-group date datetimepicker1'>
+                                <input name="arrival" type='text' class="form-control "
+                                       placeholder="Arrival Date"> <span class="input-group-addon"><span
+                                        class="glyphicon glyphicon-calendar"></span> </span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 form-group">
+                            <div class='input-group date datetimepicker1'>
+                                <input name="departure" type='text' class="form-control "
+                                       placeholder="Departure Date"> <span class="input-group-addon"><span
+                                        class="glyphicon glyphicon-calendar"></span> </span>
+                            </div>
+                        </div>
+                        <div class="col-md-1 form-group">
+                            <select id="persona" name="persona" class="form-control">
+                                <option value="1">Adults</option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                                <option value="4">3</option>
+                                <option value="5">4</option>
+                                <option value="6">5</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-2 form-group">
+                            <select id="personc" name="personc" class="form-control">
+                                <option value="1">Children</option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                                <option value="4">3</option>
+                                <option value="5">4</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <input class="form-control" id="message" name="message" placeholder="Type your message">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-block btn-enquire">ENQUIRE <span class="glyphicon glyphicon-hand-up"></span></button>
+                        </div>
+                    </div>
+                        </form>
+                             </div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- *** INTRO IMAGE END 
+	_________________________________________________________ -->

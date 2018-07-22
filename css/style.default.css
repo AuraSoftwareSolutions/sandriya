@@ -1886,3 +1886,19 @@ a.list-group-item.active > .badge,
   overflow: fx !important;
   width:100% !important;
 }
+
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color : #8FD6C7;
+}
+
+.custom-file-upload:hover {
+  background: #4fbfa8;
+  color: #fff;
+}

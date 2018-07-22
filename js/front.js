@@ -4,6 +4,10 @@ if ($.cookie("theme_csspath")) {
 
 $(document).ready(function(){
 
+	$(".reference-title2").hide();
+	$('a').hover(function(){
+		$(this).css({"text-decoration":"none"});
+	});
 	if($.cookie('jeep') || $.cookie('event')){
 	var ck = $.cookie('jeep');
 	var evt = $.cookie('event');
@@ -44,8 +48,17 @@ $(function () {
     map();
     counters();
     parallax();
-    demo();
+	demo();
 });
+getdata();
+
+function getdata(){
+	
+	$(".reference2").hover(
+		function() { $(this).find(".reference-title2").slideDown("fast"); },
+		function() { $(this).find(".reference-title2").slideUp("fast"); }
+	);
+}
 
 $(window).load(function () {
     windowWidth = $(window).width();

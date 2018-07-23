@@ -23,27 +23,28 @@
 						<li ><a onclick="window.open('index.php','_self')" style="cursor:pointer">Home</a>
 						</li>
 
-						<li><a onclick="window.open('index.php#packages','_self')" style="cursor:pointer">Packages</a>
-						</li>
-
-						<li><a onclick="window.open('index.php#references','_self')" style="cursor:pointer">Destinations</a>
-						</li>
-
 						<li id="jeep"><a class="j1"  onclick="window.open('jeepsafari.php','_self')" style="cursor:pointer">Jeep Safari</a>
+						</li>
+						<li><a onclick="window.open('index.php#packages','_self')" style="cursor:pointer">Packages</a>
 						</li>
 
 						<li id="events"><a class="ev" onclick="window.open('Events.php','_self')" style="cursor:pointer">Events</a>
 						</li>
-
-						<li id="ab"><a id="abt" onclick="window.open('index.php#about_us','_self')" style="cursor:pointer">About</a>
-						</li>
-
 						<li ><a onclick="window.open('index.php#services','_self')" style="cursor:pointer">Services</a>
 						</li>
 
 						<li><a onclick="window.open('index.php#testimonials','_self')">Testimonials</a>
 						</li>
 
+						<!-- <li><a onclick="window.open('index.php#references','_self')" style="cursor:pointer">Destinations</a>
+						</li> -->
+
+
+
+						<li id="ab"><a id="abt" onclick="window.open('index.php#about_us','_self')" style="cursor:pointer">About Us</a>
+						</li>
+
+	
 						<li id="cn"><a id="cnt" onclick="window.open('index.php#contact1','_self')" style="cursor:pointer">Contact</a>
 						</li>
 					</ul>

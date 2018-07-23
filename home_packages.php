@@ -75,10 +75,7 @@
 			<div class="mb20">
 				<h2 class="title" data-animate="fadeInUp">EXPLORE OUR TOP PACKAGES</h2>
 			</div>
-
-			
-
-			<div id="detail">
+ 			<div id="detail">
 
 				<span class="close">&times;</span> 
 
@@ -97,84 +94,47 @@
 				</div>
 
 			</div>
+			<div id="references-masonry" data-animate="fadeInUp">
+
+			<?php
+			   require_once("connection.php");
+			   $sql = 'SELECT * FROM packages LIMIT 4';
+			   $result = mysqli_query($con, $sql);
+	  
+			   if (mysqli_num_rows($result) > 0) {
+				  while($row = mysqli_fetch_assoc($result)) {
+					 ?>
+	       
 			<!-- Reference detail -->
 
-			<div id="references-masonry" data-animate="fadeInUp">
 				
 			
 				<div class="reference-item" data-category="Idukki">
 					<div class="reference">
 						<a href="#">
-							<img src="img/Locations/Munnar/Munnar.jpg" class="img-responsive" alt="" />
+							<img src="<?php echo $row['image']; ?>" class="img-responsive" alt="" />
 							<div class="overlay">
-								<h3 class="reference-title">Munnar</h3>
+								<h3 class="reference-title"><?php echo $row["name"]; ?></h3>
 							</div>
 						</a>
-						<div class="sr-only reference-description" data-images="img/Locations/Munnar/Munnar.jpg,img/Locations/Munnar/Munnar1.jpg,img/Locations/Munnar/Munnar2.jpg">
-							<p>Munnar rises as three mountain streams merge  - Mudrapuzha, Nallathanni and Kundala. 1,600 m above sea level, this hill station was once the summer resort of the erstwhile British Government in South India. Sprawling tea plantations, picturesque towns, winding lanes and holiday facilities make this a popular resort town. Among the exotic flora found in the forests and grasslands here is the Neelakurinji. This flower which bathes the hills in blue once in every twelve years, will bloom next in 2018. Munnar also has the highest peak in South India, Anamudi, which towers over 2,695 m. Anamudi is an ideal spot for trekking.</p>
+						<div class="sr-only reference-description" data-images="<?php echo $row['image']; ?>">
+							<p><?php echo $row['description']; ?></p>
 						</div>
 					</div>
 				</div>   
-				
 
+					<?php
+				  }
+			   } else {
+				  echo "Not Found";
+			   }
+			   mysqli_close($con);
+			   
 
-				<div class="reference-item" data-category="Idukki">
-					<div class="reference">
-						<a href="#">
-							<img src="img/Locations/Mattupetty/Mattupetty.jpg" class="img-responsive" alt="" />
+			 ?>
+			</div>
 
-							<div class="overlay">
-								<h3 class="reference-title">Aleppy & Thekkady Tour</h3>
-								<p>04 Nights & 05 Days</p>
-								<div class="buttons btn btn-primary tour-cart-button hidden">
-					<i class="fa fa-plus-circle"></i> More Deatils
-				</div>
-							</div>
-						</a>
-
-						<div class="sr-only reference-description" data-images="img/Locations/Mattupetty/Mattupetty.jpg,img/Locations/Mattupetty/Mattupetty1.jpg,img/Locations/Mattupetty/Mattupetty2.jpg">
-
-							<p>Cradled by the undulating plantation hills of Munnar, and not far away from the Anamudi peak is Mattupetty. Situated in the famous hill town of Munnar, Mattupetty located 13 km from Munnar is situated at a height of 1700 m, and is a delight for nature lovers.Mattupetty offers many fascinating sights to relish. Besides the lush green tea plantations, and the rolling grasslands, the Shola forests in and around Mattupetty are ideal for trekking and are habitat to a variety of birds. Rivulets and cascades crisscross the terrain here, which again adds more attraction to the place.</p>
-						</div>
-					</div>
-				</div>
-				<div class="reference-item" data-category="Idukki">
-					<div class="reference">
-						<a href="#">
-							<img src="img/Locations/Munnar/Munnar.jpg" class="img-responsive" alt="" />
-							<div class="overlay">
-								<h3 class="reference-title">Munnar</h3>
-							</div>
-						</a>
-						<div class="sr-only reference-description" data-images="img/Locations/Munnar/Munnar.jpg,img/Locations/Munnar/Munnar1.jpg,img/Locations/Munnar/Munnar2.jpg">
-							<p>Munnar rises as three mountain streams merge  - Mudrapuzha, Nallathanni and Kundala. 1,600 m above sea level, this hill station was once the summer resort of the erstwhile British Government in South India. Sprawling tea plantations, picturesque towns, winding lanes and holiday facilities make this a popular resort town. Among the exotic flora found in the forests and grasslands here is the Neelakurinji. This flower which bathes the hills in blue once in every twelve years, will bloom next in 2018. Munnar also has the highest peak in South India, Anamudi, which towers over 2,695 m. Anamudi is an ideal spot for trekking.</p>
-						</div>
-					</div>
-				</div>   
-				
-
-
-				<div class="reference-item" data-category="Idukki">
-					<div class="reference">
-						<a href="#">
-							<img src="img/Locations/Mattupetty/Mattupetty.jpg" class="img-responsive" alt="" />
-
-							<div class="overlay">
-								<h3 class="reference-title">Aleppy & Thekkady Tour</h3>
-								<p>04 Nights & 05 Days</p>
-								<div class="buttons btn btn-primary tour-cart-button hidden">
-					<i class="fa fa-plus-circle"></i> More Deatils
-				</div>
-							</div>
-						</a>
-
-						<div class="sr-only reference-description" data-images="img/Locations/Mattupetty/Mattupetty.jpg,img/Locations/Mattupetty/Mattupetty1.jpg,img/Locations/Mattupetty/Mattupetty2.jpg">
-
-							<p>Cradled by the undulating plantation hills of Munnar, and not far away from the Anamudi peak is Mattupetty. Situated in the famous hill town of Munnar, Mattupetty located 13 km from Munnar is situated at a height of 1700 m, and is a delight for nature lovers.Mattupetty offers many fascinating sights to relish. Besides the lush green tea plantations, and the rolling grasslands, the Shola forests in and around Mattupetty are ideal for trekking and are habitat to a variety of birds. Rivulets and cascades crisscross the terrain here, which again adds more attraction to the place.</p>
-						</div>
-					</div>
-				</div>
-             
+			
 
 		</div>
 		<!-- /#references-masonry -->

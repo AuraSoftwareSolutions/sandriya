@@ -19,7 +19,10 @@ require_once("../connection.php");
         die('Error: ' . mysqli_error($con));
       }
       $message = "Insert Successfully";
-      echo "<script type='text/javascript'>alert('$message');</script>";
+      echo ("<script LANGUAGE='JavaScript'>
+      window.alert('Succesfully Inserted');
+      history.go(-1);
+   </script>"); 
       
       mysqli_close($con);
     
@@ -58,9 +61,53 @@ require_once("../connection.php");
                 </div>
             </div>
         </div>
-    <div class="row-fluid">
+    
+        <div class="row-fluid">
+            <div>
+                <h4 style="text-align:center;">All Packages</h4>
+                <table class="table" style="width:50%">
+                    <thead>
+                         <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Manage</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    
+                <?php
+                        $sql="Select * from packages";
+                        $result = mysqli_query($con, $sql);
+                        
+                        if (mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+                              ?>
+                                <tr>
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td><?php echo $row['description']; ?></td>
+                                    <td><img src="../../<?php echo $row["image"]; ?>"></td>
+                                    <td><a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-primary btn-sm">Edit</a></td>
+                                    <td><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" name="del">Delete</a></td>
+                                </tr>
+                              <?php
+                            }
+                         } else {
+                            echo "Not Found";
+                         }
+                         mysqli_close($con);
+        
+
+                ?>
+</tbody>
+                </table>
+
+
+            </div>
+        </div>
+    <!-- <div class="row-fluid">
         <div class="span6">
-            <!-- block -->
             <div class="block">
                 <div class="navbar navbar-inner block-header">
                     <div class="muted pull-left"><i class='icon-th-large icon-black'></i> Groups</div>
@@ -82,11 +129,9 @@ require_once("../connection.php");
                     </table>
                 </div>
             </div>
-            <!-- /block -->
             <a href="#" class="btn btn-primary btn-small btn-add-group"><i class='icon-plus icon-white'></i> Add a group</a>
         </div>
         <div class="span6">
-            <!-- block -->
             <div class="block">
                 <div class="navbar navbar-inner block-header">
                     <div class="muted pull-left"><i class='icon-warning-sign icon-black'></i> Log</div>
@@ -101,8 +146,8 @@ require_once("../connection.php");
                 </div>
             <a href="php/exportFullLogFile.php" class="btn btn-primary btn-small btn-export-log" download><i class='icon-download icon-white'></i> Export full log</a>
             </div>
-            <!-- /block -->
         </div>
-    </div>
+    </div> -->
+</div>
 <?php
 

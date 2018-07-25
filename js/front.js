@@ -8,9 +8,11 @@ $(document).ready(function(){
 	$('a').hover(function(){
 		$(this).css({"text-decoration":"none"});
 	});
-	if($.cookie('jeep') || $.cookie('event')){
+	if($.cookie('jeep') || $.cookie('event') || $.cookie('package')){
 	var ck = $.cookie('jeep');
 	var evt = $.cookie('event');
+	var pk = $.cookie('package');
+	
 	if(ck!=null){
 		
 		$('#jeep').addClass(ck);
@@ -19,6 +21,10 @@ $(document).ready(function(){
 		
 		$('#events').addClass(evt);
 	}
+	if(pk!=null){
+		
+		$('#packages').addClass(pk);
+	}
 }
 	
 		
@@ -26,14 +32,25 @@ $(document).ready(function(){
 		$.cookie('jeep','active');
 		
 		$.removeCookie('event');
-	})
+		$.removeCookie('package');
+		
+	});
 	$('.ev').click(function(){
 		$.cookie('event','active');		
 		
 		$.removeCookie('jeep');
+		$.removeCookie('package');		
 		
-   })
-
+   });
+   $('.pk').click(function(){
+	   alert('dd');
+	$.cookie('package','active');		
+	
+	$.removeCookie('event');
+	
+	$.removeCookie('jeep');
+	
+});
 	
 });
 

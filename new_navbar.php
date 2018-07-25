@@ -25,7 +25,7 @@
 
 						<li id="jeep"><a class="j1"  onclick="window.open('jeepsafari.php','_self')" style="cursor:pointer">Jeep Safari</a>
 						</li>
-						<li><a onclick="window.open('index.php#packages','_self')" style="cursor:pointer">Packages</a>
+						<li id="packages"><a class="pk" onclick="window.open('Packages.php','_self')" style="cursor:pointer">Packages</a>
 						</li>
 
 						<li id="events"><a class="ev" onclick="window.open('Events.php','_self')" style="cursor:pointer">Events</a>

@@ -66,7 +66,7 @@ $directoryURI =basename($_SERVER['SCRIPT_NAME']);
                         <a href="uploadfiles.php">Upload</a>
                     </li> -->
                     <li>
-                        <a href="packages/addpackage.php">Add Packages</a>
+                        <a href="../packages/addpackage.php">Add Packages</a>
                     </li>
                     <li>
                         <a href="../events/addevents.php">Add Events</a>

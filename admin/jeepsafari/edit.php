@@ -8,7 +8,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     $id =  mysqli_real_escape_string($con, $_GET["id"]);
 
     
-    $sql="Select * from packages where id='$id'";
+    $sql="Select * from jeepsafari where id='$id'";
     $result = mysqli_query($con, $sql);
     
     if (mysqli_num_rows($result) > 0) {
@@ -21,14 +21,14 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                      <div class="block">
                          <div class="navbar navbar-inner block-header">
                             <input type="hidden" value="<?php echo $_GET['id']; ?>" name="id" id="id1">
-                             <div class="muted pull-left"><i class='icon-user icon-black'></i> Update Package</div>
+                             <div class="muted pull-left"><i class='icon-user icon-black'></i> Update JeepSafari</div>
                              <div class="pull-right"><span class="badge badge-info" id="amountOfUsers"></span>
                              </div>
                          </div>
                          <div class="block-content collapse in">
                          <form  method="post" enctype="multipart/form-data">
                              <div class="form-group">
-                                 <label for="text">Package Name:</label>
+                                 <label for="text">Jeep Name:</label>
                                  <input type="text" class="form-control" id="pkg_name" value="<?php echo $row['name']; ?>" name="pkg_name">
                              </div>
                              <div class="form-group">
@@ -43,7 +43,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                               </div>
                               <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
                              <button type="submit" name="submit" id="update" class="btn btn-primary">Update</button>
-                             <a href="addpackage.php" class="btn btn-default">Back</a>
+                             <a href="addjeep.php" class="btn btn-default">Back</a>
 
                              </form>
                          </div>
@@ -72,7 +72,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                     processData: false,  
                     dataType : 'json',
                     success:function(data){
-                        window.location.href= "addpackage.php";
+                        window.location.href= "addjeep.php";
                     },
                     error : function(err){
                        console.log(err);

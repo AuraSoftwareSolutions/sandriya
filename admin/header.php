@@ -66,6 +66,9 @@ $directoryURI =basename($_SERVER['SCRIPT_NAME']);
                     <li>
                         <a href="packages/addpackage.php">Add Packages</a>
                     </li>
+                    <li>
+                        <a href="packages/addpackage.php">Add Events</a>
+                    </li>
                     <li <?php if($directoryURI=="testimonials.php") { echo "class='active'";} ?>>
                         <a href="testimonials.php">Testimonials</a>
                     </li>

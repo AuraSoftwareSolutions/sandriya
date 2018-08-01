@@ -43,7 +43,6 @@ $(document).ready(function(){
 		
    });
    $('.pk').click(function(){
-	   alert('dd');
 	$.cookie('package','active');		
 	
 	$.removeCookie('event');

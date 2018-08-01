@@ -1,6 +1,6 @@
 <?php
 require("../php/checkAuth.php");
-require_once("../header2.php");
+require_once("./header2.php");
 require_once("../connection.php");
 
 ?>
@@ -12,14 +12,14 @@ require_once("../connection.php");
             <!-- block -->
             <div class="block">
                 <div class="navbar navbar-inner block-header">
-                    <div class="muted pull-left"><i class='icon-user icon-black'></i> Add Package</div>
+                    <div class="muted pull-left"><i class='icon-user icon-black'></i> Add Events</div>
                     <div class="pull-right"><span class="badge badge-info" id="amountOfUsers"></span>
                     </div>
                 </div>
                 <div class="block-content collapse in">
                 <form  method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="text">Package Name:</label>
+                        <label for="text">Event Name:</label>
                         <input type="text" class="form-control" id="pkg_name" name="pkg_name">
                     </div>
                     <div class="form-group">
@@ -39,7 +39,7 @@ require_once("../connection.php");
     
         <div class="row-fluid">
             <div>
-                <h4 style="text-align:center;">All Packages</h4>
+                <h4 style="text-align:center;">All Events</h4>
                 <table class="table" style="width:50%">
                     <thead>
                          <tr>
@@ -53,26 +53,26 @@ require_once("../connection.php");
 
                     
                 <?php
-                         $sql="Select * from packages";
-                         $result = mysqli_query($con, $sql);
-                         if (mysqli_num_rows($result)==0) {
-                             echo "Not Found";
-                             
+                        $sql="Select * from events";
+                        $result = mysqli_query($con, $sql);
+                        if (mysqli_num_rows($result)==0) {
+                            echo "Not Found";
                             
-                          } else {
-                             while($row = mysqli_fetch_assoc($result)) {
-                                 ?>
-                                   <tr>
-                                       <td><?php echo $row['name']; ?></td>
-                                       <td><?php echo $row['description']; ?></td>
-                                       <td><img style="width:100px;height:50px;" src="../../<?php echo $row["image"]; ?>"></td>
-                                       <td><a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-primary btn-sm">Edit</a></td>
-                                       <td><button id="delete" onclick="deleteRecord(<?php echo $row['id'] ;  ?>);"  class="btn btn-danger btn-sm">Delete</button></td>
-                                   </tr>
-                                 <?php
-                               }
-                          }
-                          mysqli_close($con);
+                           
+                         } else {
+                            while($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                  <tr>
+                                      <td><?php echo $row['name']; ?></td>
+                                      <td><?php echo $row['description']; ?></td>
+                                      <td><img style="width:100px;height:50px;" src="../../<?php echo $row["image"]; ?>"></td>
+                                      <td><a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-primary btn-sm">Edit</a></td>
+                                      <td><button id="delete" onclick="deleteRecord(<?php echo $row['id'] ;  ?>);"  class="btn btn-danger btn-sm">Delete</button></td>
+                                  </tr>
+                                <?php
+                              }
+                         }
+                         mysqli_close($con);
         
 
                 ?>
@@ -108,7 +108,7 @@ $(document).ready(function(){
       success:function(data){
         console.log(data);
         alert(data.status_message);
-        window.location.href= "addpackage.php";
+        window.location.href= "addevents.php";
       },
       error : function(err){
         console.log(err);
@@ -122,7 +122,7 @@ $(document).ready(function(){
   })
 });
 function deleteRecord(id){
-    var confirmation = confirm("Are you sure you want to remove the package?");
+    var confirmation = confirm("Are you sure you want to remove the event?");
 
     if (confirmation) {
        var fd = new FormData();
@@ -139,7 +139,7 @@ function deleteRecord(id){
                 success:function(data){
                     console.log(data);
                     alert('Delete Successfully');
-                    window.location.href= "addpackage.php";
+                    window.location.href= "addevents.php";
                 },
                 error : function(err){
                     console.log(err);

@@ -1,6 +1,6 @@
 <?php
 require("../php/checkAuth.php");
-require_once("../header2.php");
+require_once("./header2.php");
 require_once("../connection.php");
 
 ?>
@@ -12,14 +12,14 @@ require_once("../connection.php");
             <!-- block -->
             <div class="block">
                 <div class="navbar navbar-inner block-header">
-                    <div class="muted pull-left"><i class='icon-user icon-black'></i> Add Package</div>
+                    <div class="muted pull-left"><i class='icon-user icon-black'></i> Add JeepSafari</div>
                     <div class="pull-right"><span class="badge badge-info" id="amountOfUsers"></span>
                     </div>
                 </div>
                 <div class="block-content collapse in">
                 <form  method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="text">Package Name:</label>
+                        <label for="text">Jeep Name:</label>
                         <input type="text" class="form-control" id="pkg_name" name="pkg_name">
                     </div>
                     <div class="form-group">
@@ -39,7 +39,7 @@ require_once("../connection.php");
     
         <div class="row-fluid">
             <div>
-                <h4 style="text-align:center;">All Packages</h4>
+                <h4 style="text-align:center;">All JeepSafari</h4>
                 <table class="table" style="width:50%">
                     <thead>
                          <tr>
@@ -52,8 +52,8 @@ require_once("../connection.php");
                     <tbody>
 
                     
-                <?php
-                         $sql="Select * from packages";
+                <?php 
+                        $sql="Select * from jeepsafari";
                          $result = mysqli_query($con, $sql);
                          if (mysqli_num_rows($result)==0) {
                              echo "Not Found";
@@ -108,7 +108,7 @@ $(document).ready(function(){
       success:function(data){
         console.log(data);
         alert(data.status_message);
-        window.location.href= "addpackage.php";
+        window.location.href= "addjeep.php";
       },
       error : function(err){
         console.log(err);
@@ -122,7 +122,7 @@ $(document).ready(function(){
   })
 });
 function deleteRecord(id){
-    var confirmation = confirm("Are you sure you want to remove the package?");
+    var confirmation = confirm("Are you sure you want to remove the jeepsafari?");
 
     if (confirmation) {
        var fd = new FormData();
@@ -139,7 +139,7 @@ function deleteRecord(id){
                 success:function(data){
                     console.log(data);
                     alert('Delete Successfully');
-                    window.location.href= "addpackage.php";
+                    window.location.href= "addjeep.php";
                 },
                 error : function(err){
                     console.log(err);

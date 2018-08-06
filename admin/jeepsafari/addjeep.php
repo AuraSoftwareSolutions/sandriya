@@ -1,6 +1,6 @@
 <?php
 require("../php/checkAuth.php");
-require_once("./header2.php");
+require_once("../header2.php");
 require_once("../connection.php");
 
 ?>

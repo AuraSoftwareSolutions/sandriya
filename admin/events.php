@@ -1,7 +1,7 @@
 <?php
 require("php/checkAuth.php");
 include 'connection.php';
-require_once("header.php");
+require_once("header2.php");
 // session_start();
 ?>
 <div class="container">

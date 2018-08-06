@@ -66,7 +66,7 @@ $directoryURI =basename($_SERVER['SCRIPT_NAME']);
                         <a href="uploadfiles.php">Upload</a>
                     </li> -->
                     <li>
-                        <a href="packages/addpackage.php">Add Packages</a>
+                    <a href="../packages/addpackage.php">Add Packages</a>
                     </li>
                     <li>
                         <a href="../events/addevents.php">Add Events</a>
@@ -75,11 +75,11 @@ $directoryURI =basename($_SERVER['SCRIPT_NAME']);
                         <a href="../jeepsafari/addjeep.php">Add Jeep Safari</a>
                     </li>
                     <li <?php if($directoryURI=="testimonials.php") { echo "class='active'";} ?>>
-                        <a href="testimonials.php">Testimonials</a>
+                        <a href="../testimonials.php">Testimonials</a>
                     </li>
-                     <li <?php if($directoryURI=="events.php") { echo "class='active'";} ?>>
-                        <a href="events.php">Event</a>
-                    </li>
+                     <!-- <li </?php if($directoryURI=="events.php") { echo "class='active'";} ?>>
+                        <a href="../events.php">Event</a>
+                    </li> -->
                 </ul>
             </div>
             <!--/.nav-collapse -->

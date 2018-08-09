@@ -1,5 +1,31 @@
 
+<style>
+	.reference-item{
+		border-radius : 13px;
+	}
 
+	#events{
+		height: 328px !important;
+	}
+
+	#jeep{
+		height : 328px  !important;
+	}
+
+	#dest{
+		height : 328px  !important;
+
+	}
+
+	#adv{
+		height :328px  !important;
+
+	}
+
+	#kl{
+		margin: 17px 17px 17px 17px;
+	}
+</style>
 	<div class="section" id="references">
 		<div class="container">
 			<div class="col-sm-12">
@@ -45,15 +71,15 @@
 	
 				
 		<p class="lead text-center" data-animate="fadeInUp">Search your locations on adventure mode or destination based</p>
-		
-				<div class="row">
+		<div id="kl">				
+			<div class="row">
 					<div class="col-md-6">
 					
-						<div class="reference-item img-large search-category">
+						<div class="reference-item img-large search-category" id="jeep">
 							<div class="reference-custom" onclick="window.location = 'jeepsafari.php';">
 								<span>
 									<div class ="imgContainer">
-										<img src="img/Jungle Safari4.jpg" class="img-responsive" alt="" />
+										<img style="height:328px !important;" src="img/Jungle Safari4.jpg" class="img-responsive" alt="" />
 										<div class="txtCentered">
 											<h2>Jeep Safari</h2>
 										</div>
@@ -64,7 +90,7 @@
 						</div> 
 				<div class="col-md-6">
 					
-						<div class="reference-item img-large search-category">
+						<div class="reference-item img-large search-category" id="events">
 							<div class="reference-custom" onclick="window.location = 'Events.php';">
 								<span>
 									<div class ="imgContainer">
@@ -81,7 +107,7 @@
 				</div>        
 				<div class="row">
 					<div class="col-md-6">
-						<div class="reference-item img-large search-category">
+						<div class="reference-item img-large search-category" id="adv">
 							<div class="reference-custom" onclick="window.location = 'adventures.html';">
 								<span>
 									<div class ="imgContainer">
@@ -95,7 +121,7 @@
 						</div>
 					</div>
 					<div class="col-md-6">    
-						<div class="reference-item img-large search-category">
+						<div class="reference-item img-large search-category" id="dest">
 							<div class="reference-custom" onclick="window.location = 'destinations.html';">
 								<span>
 									<div class ="imgContainer">
@@ -111,6 +137,8 @@
 					
 				</div>
 			</div>
+		</div>
+		
 		</div>
 	</div>      
 	<div class="section"  id="about_us">

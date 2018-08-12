@@ -15,7 +15,7 @@
 				<?php
 			   $sql = 'SELECT * FROM jeepsafari LIMIT 4';
 			   $result = mysqli_query($con, $sql);
-	  
+			   if($result){
 			   if (mysqli_num_rows($result) > 0) {
 				  while($row = mysqli_fetch_assoc($result)) {
 					 ?> 
@@ -40,6 +40,8 @@
 			   } else {
 				  echo "Not Found";
 			   }
+
+			}
 			   
 
 			 ?>

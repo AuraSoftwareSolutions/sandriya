@@ -2,6 +2,15 @@
 <html>
 <head>
 	<title></title>
+	<style>
+	  .logo{
+		width: 192px;
+		height: 67px;
+		position: relative;
+		bottom: 20px;
+		border-radius: 7px;
+	  }
+	</style>
 </head>
 <body>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
@@ -14,7 +23,7 @@
 						<span class="icon-bar"></span>
 					</button>
 
-					<a  class="navbar-brand scrollTo" <a onclick="window.open('index.php','_self')">Sandriya</a>
+					<a  class="navbar-brand scrollTo" <a onclick="window.open('index.php','_self')"><img class="logo" src="logo.jpg"/></a>
 
 
 				</div>

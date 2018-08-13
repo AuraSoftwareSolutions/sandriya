@@ -19,6 +19,23 @@ function showEventDataLimit(){
    }
 }
 
+function showEventAll(){
+  global $con;
+  $sql = 'SELECT * FROM events';
+  $response=array();
+  $result=mysqli_query($con, $sql);
+  if($result){
+  while($row=mysqli_fetch_array($result))
+  {
+  $response[]=$row;
+  }
+    return json_encode($response);
+ }else{
+     
+  return  json_encode(null);
+ }
+}
+
 function showJeepSafariDataLimit(){
     global $con;
     $sql = 'SELECT * FROM jeepsafari LIMIT 4';
@@ -69,6 +86,24 @@ function showPackagesDataLimit(){
   return  json_encode(null);
  }
 }
+
+function showPackagesAll(){
+  global $con;
+  $sql = 'SELECT * FROM packages';
+  $response=array();
+  $result=mysqli_query($con, $sql);
+  if($result){
+  while($row=mysqli_fetch_array($result))
+  {
+  $response[]=$row;
+  }
+    return json_encode($response);
+ }else{
+     
+  return  json_encode(null);
+ }
+}
+
 
 
 

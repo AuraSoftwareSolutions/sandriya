@@ -124,11 +124,7 @@
 				</div>
 				<div id="references-masonry2 col-md-4" style="position:relative;left:54px;" data-animate="fadeInUp">
 				<?php
-<<<<<<< HEAD
-			require_once('manage.php');
-=======
 			      require_once('manage.php');
->>>>>>> 718a85cc364b461358bb63ff93dab78b29a61d07
 					 $data = showJeepSafariAll();
 					 $data_decode = json_decode($data);
 					 

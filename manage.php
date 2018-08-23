@@ -19,8 +19,6 @@ function showEventDataLimit(){
    }
 }
 
-<<<<<<< HEAD
-=======
 function showEventAll(){
   global $con;
   $sql = 'SELECT * FROM events';
@@ -38,7 +36,6 @@ function showEventAll(){
  }
 }
 
->>>>>>> 718a85cc364b461358bb63ff93dab78b29a61d07
 function showJeepSafariDataLimit(){
     global $con;
     $sql = 'SELECT * FROM jeepsafari LIMIT 4';
@@ -90,8 +87,6 @@ function showPackagesDataLimit(){
  }
 }
 
-<<<<<<< HEAD
-=======
 function showPackagesAll(){
   global $con;
   $sql = 'SELECT * FROM packages';
@@ -110,7 +105,6 @@ function showPackagesAll(){
 }
 
 
->>>>>>> 718a85cc364b461358bb63ff93dab78b29a61d07
 
 
 ?>

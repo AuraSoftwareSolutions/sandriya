@@ -116,33 +116,36 @@ require_once("connection.php");
                <table class="table" style="width:100%">
                    <thead>
                         <tr>
-                       <th>Name</th>
-                       <th>Description</th>
-                       <th>Image</th>
+                       <th style="text-align:center;font-weight:bold;">Name</th>
+                       <th style="text-align:center;font-weight:bold;">Description</th>
+                       <th style="text-align:center;font-weight:bold;">Image</th>
                    </tr>
                    </thead>
                    <tbody>
 
                    
                <?php
+                       require_once('manage.php');
+										 
                        
-                       
-                       $sql="Select * from packages";
-                       $result = mysqli_query($con, $sql);
-                       
-                       if (mysqli_num_rows($result) > 0) {
-                           while($row = mysqli_fetch_assoc($result)) {
-                             ?>
-                               <tr>
-                                   <td><?php echo $row['name']; ?></td>
-                                   <td><?php echo $row['description']; ?></td>
-                                   <td><img src="<?php echo $row["image"]; ?>"></td>
+                       $sql= showPackagesAll();
+					   $data_decode = json_decode($sql);
+					   if($data_decode == null){
+						
+						  echo "<p style='color:red;text-align:center'>No record Found</p>";
+						}else{
+							foreach($data_decode as $row){
+								?>
+ 								<tr>
+                                   <td><?php echo $row->name; ?></td>
+                                   <td><?php echo $row->description; ?></td>
+                                   <td><img src="<?php echo $row->image; ?>"></td>
                                </tr>
-                             <?php
-                           }
-                        } else {
-                           echo "Not Found";
-                        }
+                           
+								<?php
+							}
+						}
+                              
                         mysqli_close($con);
        
 

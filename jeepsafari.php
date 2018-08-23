@@ -124,36 +124,38 @@
 				</div>
 				<div id="references-masonry2 col-md-4" style="position:relative;left:54px;" data-animate="fadeInUp">
 				<?php
-			   $sql = 'SELECT * FROM jeepsafari LIMIT 4';
-			   $result = mysqli_query($con, $sql);
-	  
-			   if (mysqli_num_rows($result) > 0) {
-				  while($row = mysqli_fetch_assoc($result)) {
-					 ?> 
-			<!-- Reference detail -->
+			require_once('manage.php');
+					 $data = showJeepSafariAll();
+					 $data_decode = json_decode($data);
+					 
+					 /* If data is not found display the error message */
+					 if($data_decode == null){
+					 
+					   echo "<p style='color:red;text-align:center'>No record Found</p>";
+					 }else{
 
-				<div class="reference-item col-md-6" data-category="Idukki" style="height:225px;">
-					<div class="reference">
-						<a href="#">
-							<img src="<?php echo $row['image']; ?>" class="img-responsive" alt="" />
-							<div class="overlay">
-								<h3 class="reference-title"><?php echo $row["name"]; ?></h3>
+							foreach($data_decode as $result){
+					 ?>
+					 <div class="reference-item col-md-6" data-category="Idukki" style="height:225px;">
+						<div class="reference">
+					 <a href="#">
+						<img src="<?php echo $result->image; ?>" class="img-responsive" alt="" />
+								<div class="overlay">
+									<h3 class="reference-title"><?php echo $result->name; ?></h3>
+								</div>
+							</a>
+							<div class="sr-only reference-description" data-images="<?php echo $result->image; ?>">
+								<p><?php echo $result->description; ?></p>
 							</div>
-						</a>
-						<div class="sr-only reference-description" data-images="<?php echo $row['image']; ?>">
-							<p><?php echo $row['description']; ?></p>
 						</div>
-					</div>
-				</div>   
+					</div>   
 
 					<?php
-				  }
-			   } else {
-				  echo "Not Found";
-			   }
-			   
+				}
 
-			 ?>
+			}
+				
+				?>
 			</div>
 				
 				</div>

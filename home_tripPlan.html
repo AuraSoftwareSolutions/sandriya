@@ -1,89 +1,63 @@
+<!-- *** TRIP PLAN ***
+	_________________________________________________________ -->
 
-<style>
-
-
-	#events{
-		height: 328px !important;
-	}
-
-	#jeep{
-		height : 313px  !important;
-	}
-
-	#dest{
-		height : 328px  !important;
-
-	}
-
-	#adv{
-		height :328px  !important;
-
-	}
-
-	#kl{
-		margin: 17px 17px 17px 17px;
-	}
-</style>
 	<div class="section" id="references">
 		<div class="container">
 			<div class="col-sm-12">
 				<div class="mb20">
 					<h2 class="title" data-animate="fadeInUp">Events</h2>
-				</div>
-			
-				<div id="references-masonry2 col-md-4" style="position:relative;left:54px;" data-animate="fadeInUp">
-					<?php
-					require_once('manage.php');
-					 $data = showEventDataLimit();
-					 $data_decode = json_decode($data);
-					 
-					 /* If data is not found display the error message */
-					 if($data_decode == null){
-					 
-					   echo "<p style='color:red;text-align:center'>No record Found</p>";
-					 }else{
-
-							foreach($data_decode as $result){
-					 ?>
-					 <div class="reference-item col-md-6" data-category="Idukki" style="height:225px;">
-						<div class="reference">
-					 <a href="#">
-						<img src="<?php echo $result->image; ?>" class="img-responsive" alt="" />
-								<div class="overlay">
-									<h3 class="reference-title"><?php echo $result->name; ?></h3>
+					<div class="row">
+						<div id="references-masonry2 col-md-4" style="position:relative;left:54px;" data-animate="fadeInUp">
+							<?php
+							require_once('manage.php');
+							 $data = showEventDataLimit();
+							 $data_decode = json_decode($data);
+							 
+							 /* If data is not found display the error message */
+							 if($data_decode == null){
+							 
+							   echo "<p style='color:red;text-align:center'>No record Found</p>";
+							 }else{
+		
+									foreach($data_decode as $result){
+							 ?>
+							 <div class="reference-item col-md-6" data-category="Idukki" style="height:225px;">
+								<div class="reference">
+							 <a href="#">
+								<img src="<?php echo $result->image; ?>" class="img-responsive" alt="" />
+										<div class="overlay">
+											<h3 class="reference-title"><?php echo $result->name; ?></h3>
+										</div>
+									</a>
+									<div class="sr-only reference-description" data-images="<?php echo $result->image; ?>">
+										<p><?php echo $result->description; ?></p>
+									</div>
 								</div>
-							</a>
-							<div class="sr-only reference-description" data-images="<?php echo $result->image; ?>">
-								<p><?php echo $result->description; ?></p>
-							</div>
+							</div>   
+		
+							<?php
+						}
+		
+					}
+						
+						?>
+		
+			
+							
 						</div>
-					</div>   
-
-					<?php
-				}
-
-			}
-				
-				?>
-
-	
-					
-				</div>
-			</div>
-		</div>
-	</div>
-	
-				
-		<p class="lead text-center" data-animate="fadeInUp">Search your locations on adventure mode or destination based</p>
-		<div id="kl">				
-			<div class="row">
+		
+					</div>
+					<p class="lead text-center" data-animate="fadeInUp">Search your locations on adventure mode or destination based</p>
+				</div>    
+		
+				<div class="row">
 					<div class="col-md-6">
 					
-						<div class="reference-item img-large search-category" id="jeep">
-							<div class="reference-custom" onclick="window.location = 'jeepsafari.php';">
+						<div class="reference-item img-large search-category">
+							<div class="reference-custom" onclick="window.location = 'destinations.html';">
 								<span>
 									<div class ="imgContainer">
-										<img style="height:328px !important;" src="img/Jungle Safari4.jpg" class="img-responsive" alt="" />
+										<img src="img/Jungle Safari4.jpg" class="img-responsive" alt="" />
 										<div class="txtCentered">
 											<h2>Jeep Safari</h2>
 										</div>
@@ -94,7 +68,7 @@
 						</div> 
 				<div class="col-md-6">
 					
-						<div class="reference-item img-large search-category" id="events">
+						<div class="reference-item img-large search-category">
 							<div class="reference-custom" onclick="window.location = 'Events.php';">
 								<span>
 									<div class ="imgContainer">
@@ -111,7 +85,7 @@
 				</div>        
 				<div class="row">
 					<div class="col-md-6">
-						<div class="reference-item img-large search-category" id="adv">
+						<div class="reference-item img-large search-category">
 							<div class="reference-custom" onclick="window.location = 'adventures.html';">
 								<span>
 									<div class ="imgContainer">
@@ -125,7 +99,7 @@
 						</div>
 					</div>
 					<div class="col-md-6">    
-						<div class="reference-item img-large search-category" id="dest">
+						<div class="reference-item img-large search-category">
 							<div class="reference-custom" onclick="window.location = 'destinations.html';">
 								<span>
 									<div class ="imgContainer">
@@ -141,8 +115,6 @@
 					
 				</div>
 			</div>
-		</div>
-		
 		</div>
 	</div>      
 	<div class="section"  id="about_us">
